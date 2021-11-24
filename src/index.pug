@@ -1,0 +1,76 @@
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title UTM Generate
+		link(rel="stylesheet", href="css/main.min.css")
+		link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet")
+	body
+		.container
+			p.text-hint Пример, какой адрес сайта нужно вписывать - google.com
+			form(block="form")
+				h2(elem="title") Адрес вашей страницы
+				div(elem="input-wrap")
+					div.js-dropdown(elem="dropdown")
+						span.button_interactive.js-dropdown-current#button-dropdown(elem="dropdown-current") https://
+						.js-dropdown-item(elem="dropdown-item") http://
+					input(type="text" placeholder="Введите адрес страницы" id="input-string")
+				h2(elem="title") Источник трафика
+				div(elem="radio-group")
+					div(elem="radio-item")
+						label(elem="radio-label") Свои значения
+							input(type="radio" name="deadline" elem="radio-input" id="own-choose-radio" checked)
+							span(elem="radio")
+					div(elem="radio-item")
+						label(elem="radio-label") Google Adwords
+							input(type="radio" name="deadline" elem="radio-input" id="google")
+							span(elem="radio")
+					div(elem="radio-item")
+						label(elem="radio-label") Яндекс.Директ
+							input(type="radio" name="deadline" elem="radio-input" id="yandex")
+							span(elem="radio")
+					div(elem="radio-item")
+						label(elem="radio-label") Вконтакте
+							input(type="radio" name="deadline" elem="radio-input" id="vk")
+							span(elem="radio")
+					div(elem="radio-item")
+						label(elem="radio-label") Facebook
+							input(type="radio" name="deadline" elem="radio-input" id="fb")
+							span(elem="radio")
+				div(elem="edit-group")
+					.col
+						h2(elem="title") Обязательные параметры
+						label(elem="label" for="utm_source") Источник кампании
+						div(elem="input-wrap")
+							span(elem="input-title") utm_source
+							input(type="text" placeholder="google, yandex, vk, facebook" id="utm_source" data-id="utm_source" elem="input")
+						label(elem="label" for="utm_medium") Тип трафика
+						div(elem="input-wrap")
+							span(elem="input-title") utm_medium
+							input(type="text" placeholder="cpc, email, banner, article" id="utm_medium" data-id="utm_medium" elem="input")
+						label(elem="label" for="utm_campaign") Название кампании
+						div(elem="input-wrap")
+							span(elem="input-title") utm_campaign
+							input(type="text" placeholder="cpc, email, banner, article" id="utm_campaign"  data-id="utm_campaign" elem="input")
+							div(elem="hint")
+					.col
+						h2(elem="title") Необязательные параметры
+						label(elem="label" for="utm_content") Идентификатор объявления
+						div(elem="input-wrap")
+							span(elem="input-title") utm_content
+							input(type="text" placeholder="link, landing page" id="utm_content" data-id="utm_content" elem="input")
+							div(elem="hint")
+						label(elem="label" for="utm_term") Ключевое слово
+						div(elem="input-wrap")
+							span(elem="input-title") utm_term
+							input(type="text" placeholder="free, -30%, registration" id="utm_term" data-id="utm_term" elem="input")
+							div(elem="hint")
+				div(elem="result-wrap")
+					h2(elem="title") Результат
+					div(elem="result-group")
+						button(disabled).js-copy-button.button.button_interactive Копировать ссылку
+						input(readonly placeholder="Здесь появится результат ваших действий..." id="input-result")
+		.js-popup-copy-successful.popup-copy-successful.popup-copy-successful_hidden Ссылка скопирована!
+		script(src="js/index-min.js")
